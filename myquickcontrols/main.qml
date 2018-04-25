@@ -9,7 +9,7 @@ ApplicationWindow {
     width: 640; height: 480
     minimumWidth: 400; minimumHeight: 300;
     maximumWidth: 640; maximumHeight: 480;
-    title: qsTr("Hello World")
+    title: qsTr("Application Window")
 
     TextArea {
         id: content
@@ -20,12 +20,14 @@ ApplicationWindow {
         id: quitAction
         text: qsTr("Quit")
         shortcut: "ctrl + q"
+        iconSource: "images/quit.png"
         onTriggered: Qt.quit()
     }
     Action {
         id: cutAction
         text: qsTr("Cut")
         shortcut: "ctrl + x"
+        iconSource: "images/paste.png"
         onTriggered: content.cut()
     }
     Action {
@@ -50,6 +52,7 @@ ApplicationWindow {
             title: qsTr("&Edit")
             MenuItem { action: copyAction }
             MenuItem { action: pasteAction }
+            MenuSeparator {}
             MenuItem { action: cutAction }
         }
     }
